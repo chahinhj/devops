@@ -1,8 +1,9 @@
-version: '3'
+version: "3"
+
 services:
-  database:
+  mysqldb:
     image: mysql
-    container_name: database
+    container_name: mysqldb
     restart: unless-stopped
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=1
@@ -10,23 +11,18 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - data:/var/lib/mysql
-    networks:
-      - mynet
-
-  spring-boot:
-    container_name: back
+      - db:/var/lib/mysql
+  app:
+    depends_on:
+      - mysqldb
+    image: rouadali/achat-1.0-s7
+    restart: on-failure
     ports:
       - 8089:8089
-    depends_on:
-      - database
-    networks:
-      - mynet
-    restart: on-failure
-    
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true
+
 volumes:
-  data:
-  
-networks:
-  mynet:
-    driver: bridge
+  db:
