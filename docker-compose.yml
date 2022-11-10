@@ -15,7 +15,7 @@ services:
       - mynet
 
   spring-boot:
-    image: dqntero/spring
+    image: rouadali/spring
     container_name: back
     ports:
       - 8089:8089
