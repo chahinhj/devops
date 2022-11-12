@@ -19,8 +19,16 @@ pipeline {
         echo 'compiling the application ...'
         sh "mvn compiler:compile"
       }
+
     }
-	
+	stage("MVN SONARQUBE"){
+   steps{
+   sh "mvn sonar:sonar \
+   -Dsonar.projectKey=Ayoub \
+   -Dsonar.host.url=http://192.168.1.22/:9000 \
+   -Dsonar.login=b43f4280745c436312a7957efe09480f7353603f"
+  }
+}
 
  }
 }
