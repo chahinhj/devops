@@ -45,6 +45,30 @@ stage("Nexus") {
       }
 
     }
+    stage("Building Docker Image") {
+                steps{
+                    sh 'docker build -t Ayoub26/achat .'
+                }
+        }
+                
+           stage("Login to DockerHub") {
+                steps{
+                   // sh 'sudo chmod 666 /var/run/docker.sock'
+                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u Ayoub26 -p azerty123'
+                }
+        }
+        stage("Push to DockerHub") {
+                steps{
+                    sh 'docker push Ayoub26/achat'
+                }
+        }
+    
+               stage("Docker-compose") {
+                steps{
+                    sh 'docker-compose up -d'
+                }
+        }
+    }
 
  }
 }
