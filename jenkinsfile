@@ -37,6 +37,14 @@ pipeline {
    -Dsonar.login=b43f4280745c436312a7957efe09480f7353603f"
   }
 }
+stage("Nexus") {
+      
+      steps {
+
+        sh "mvn deploy -DskipTests"
+      }
+
+    }
 
  }
 }
