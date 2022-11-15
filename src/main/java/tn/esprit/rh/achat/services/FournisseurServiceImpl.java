@@ -18,13 +18,13 @@ import java.util.List;
 @Slf4j
 public class FournisseurServiceImpl implements IFournisseurService {
 
-	@Autowired
+	@Autowired(required=false)
 	FournisseurRepository fournisseurRepository;
-	@Autowired
+	@Autowired(required=false)
 	DetailFournisseurRepository detailFournisseurRepository;
-	@Autowired
+	@Autowired(required=false)
 	ProduitRepository produitRepository;
-	@Autowired
+	@Autowired(required=false)
 	SecteurActiviteRepository secteurActiviteRepository;
 
 	@Override

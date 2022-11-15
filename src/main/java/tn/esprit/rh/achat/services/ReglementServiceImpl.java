@@ -12,9 +12,9 @@ import java.util.List;
 @Service
 public class ReglementServiceImpl implements IReglementService {
 
-	@Autowired
+	@Autowired(required=false)
 	FactureRepository factureRepository;
-	@Autowired
+	@Autowired(required=false)
 	ReglementRepository reglementRepository;
 	@Override
 	public List<Reglement> retrieveAllReglements() {

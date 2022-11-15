@@ -16,17 +16,17 @@ import java.util.Set;
 @Transactional
 public class FactureServiceImpl implements IFactureService {
 
-	@Autowired
+	@Autowired(required = false)
 	FactureRepository factureRepository;
-	@Autowired
+	@Autowired(required = false)
 	OperateurRepository operateurRepository;
-	@Autowired
+	@Autowired(required = false)
 	DetailFactureRepository detailFactureRepository;
-	@Autowired
+	@Autowired(required = false)
 	FournisseurRepository fournisseurRepository;
-	@Autowired
+	@Autowired(required = false)
 	ProduitRepository produitRepository;
-    @Autowired
+    @Autowired(required = false)
     ReglementServiceImpl reglementService;
 	
 	@Override

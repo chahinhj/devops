@@ -11,7 +11,7 @@ import java.util.List;
 public class CategorieProduitServiceImpl implements ICategorieProduitService {
 
 	
-	@Autowired
+	@Autowired(required = false)
 	CategorieProduitRepository categorieProduitRepository;
 	@Override
 	public List<CategorieProduit> retrieveAllCategorieProduits() {

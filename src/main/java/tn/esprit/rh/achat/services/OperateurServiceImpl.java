@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class OperateurServiceImpl implements IOperateurService {
 
-	@Autowired
+	@Autowired(required=false)
 	OperateurRepository operateurRepository;
 	@Override
 	public List<Operateur> retrieveAllOperateurs() {

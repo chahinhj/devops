@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class SecteurActiviteServiceImpl implements ISecteurActiviteService{
 
-	@Autowired
+	@Autowired(required=false)
 	SecteurActiviteRepository secteurActiviteRepository;
 	@Override
 	public List<SecteurActivite> retrieveAllSecteurActivite() {
