@@ -50,7 +50,7 @@ stage("Nexus") {
                     sh 'docker build -t Ayoub26/achat .'
                 }
         }
-                
+
            stage("Login to DockerHub") {
                 steps{
                    // sh 'sudo chmod 666 /var/run/docker.sock'
@@ -71,4 +71,3 @@ stage("Nexus") {
     }
 
  }
-}
