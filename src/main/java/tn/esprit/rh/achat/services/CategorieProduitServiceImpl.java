@@ -11,7 +11,7 @@ import java.util.List;
 public class CategorieProduitServiceImpl implements ICategorieProduitService {
 
 	
-	@Autowired(required = false)
+	@Autowired
 	CategorieProduitRepository categorieProduitRepository;
 	@Override
 	public List<CategorieProduit> retrieveAllCategorieProduits() {
@@ -39,8 +39,7 @@ public class CategorieProduitServiceImpl implements ICategorieProduitService {
 
 	@Override
 	public CategorieProduit retrieveCategorieProduit(Long id) {
-		CategorieProduit categorieProduit = categorieProduitRepository.findById(id).orElse(null);
-		return categorieProduit;
+		return categorieProduitRepository.findById(id).orElse(null);
 	}
 
 }

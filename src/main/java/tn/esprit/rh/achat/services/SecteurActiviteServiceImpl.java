@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class SecteurActiviteServiceImpl implements ISecteurActiviteService{
 
-	@Autowired(required=false)
+	@Autowired
 	SecteurActiviteRepository secteurActiviteRepository;
 	@Override
 	public List<SecteurActivite> retrieveAllSecteurActivite() {
@@ -37,8 +37,7 @@ public class SecteurActiviteServiceImpl implements ISecteurActiviteService{
 
 	@Override
 	public SecteurActivite retrieveSecteurActivite(Long id) {
-		SecteurActivite secteurActivite = secteurActiviteRepository.findById(id).orElse(null);
-		return secteurActivite;
+		return secteurActiviteRepository.findById(id).orElse(null);
 	}
 
 }

@@ -18,13 +18,13 @@ import java.util.List;
 @Slf4j
 public class FournisseurServiceImpl implements IFournisseurService {
 
-	@Autowired(required=false)
+	@Autowired
 	FournisseurRepository fournisseurRepository;
-	@Autowired(required=false)
+	@Autowired
 	DetailFournisseurRepository detailFournisseurRepository;
-	@Autowired(required=false)
+	@Autowired
 	ProduitRepository produitRepository;
-	@Autowired(required=false)
+	@Autowired
 	SecteurActiviteRepository secteurActiviteRepository;
 
 	@Override
@@ -46,7 +46,7 @@ public class FournisseurServiceImpl implements IFournisseurService {
 		return f;
 	}
 	
-	private DetailFournisseur  saveDetailFournisseur(Fournisseur f){
+	public DetailFournisseur  saveDetailFournisseur(Fournisseur f){
 		DetailFournisseur df = f.getDetailFournisseur();
 		detailFournisseurRepository.save(df);
 		return df;
@@ -67,8 +67,7 @@ public class FournisseurServiceImpl implements IFournisseurService {
 	@Override
 	public Fournisseur retrieveFournisseur(Long fournisseurId) {
 
-		Fournisseur fournisseur = fournisseurRepository.findById(fournisseurId).orElse(null);
-		return fournisseur;
+		return fournisseurRepository.findById(fournisseurId).orElse(null);
 	}
 
 	

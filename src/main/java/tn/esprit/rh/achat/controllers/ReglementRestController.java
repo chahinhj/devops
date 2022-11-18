@@ -15,7 +15,6 @@ import java.util.List;
 @RestController
 @Api(tags = "Gestion des reglements")
 @RequestMapping("/reglement")
-@CrossOrigin("*")
 public class ReglementRestController {
 
     @Autowired
@@ -32,8 +31,7 @@ public class ReglementRestController {
     @GetMapping("/retrieve-all-reglements")
     @ResponseBody
     public List<Reglement> getReglement() {
-        List<Reglement> list = reglementService.retrieveAllReglements();
-        return list;
+    	return reglementService.retrieveAllReglements();
     }
 
     // http://localhost:8089/SpringMVC/reglement/retrieve-reglement/8

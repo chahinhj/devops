@@ -16,11 +16,11 @@ import java.util.List;
 @Slf4j
 public class ProduitServiceImpl implements IProduitService {
 
-	@Autowired(required=false)
+	@Autowired
 	ProduitRepository produitRepository;
-	@Autowired(required=false)
+	@Autowired
 	StockRepository stockRepository;
-	@Autowired(required=false)
+	@Autowired
 	CategorieProduitRepository categorieProduitRepository;
 
 	@Override
