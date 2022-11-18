@@ -71,13 +71,13 @@ stage("Nexus") {
     }
 post {
         success {
-             mail to: "ayoubselmani26@gmail.com",
+             mail to: "ayoubselmani2607@gmail.com",
                     subject: "Build sucess",
                     body: "sucess"
             echo 'successful'
         }
         failure {
-             mail to: "ayoubselmani26@gmail.com",
+             mail to: "ayoubselmani2607@gmail.com",
                     subject: "Build failed",
                     body: "failed"
             echo 'failed'
